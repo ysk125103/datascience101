@@ -1,0 +1,5 @@
+The dataset __outliers.csv__ contains two lists. 
+
+The first list "no_outliers" contains normally distributed data. 
+
+The second list is a copy of the first list except 5 items: they contain very large outliers.
