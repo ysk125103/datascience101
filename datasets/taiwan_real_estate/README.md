@@ -1,6 +1,6 @@
 ## Taiwan Real Estate Valuation Dataset
 
-Please check the original, full dataset at [here](https://archive.ics.uci.edu/ml/datasets/Real+estate+valuation+data+set)
+Please check the original, full dataset at [here](https://archive.ics.uci.edu/ml/datasets/Real+estate+valuation+data+set).
 
 The file __taiwan_real_estate_partial.csv__ contains only 3 features (inputs) and the label (output). 
 
@@ -12,3 +12,6 @@ Features:
 Label: 
 * __unit_price__: house price per unit area
 
+-------
+
+Check out my Machine Learning blog at https://YashmeetSingh.com
