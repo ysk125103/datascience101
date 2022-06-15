@@ -1,12 +1,14 @@
-The authors of [Introduction to Statistical Learning, 2e](https://www.statlearning.com/) has provided multiple datasets for practical labs and exercises. You can find the R package containing all of these datasets [here](https://cran.r-project.org/web/packages/ISLR2/index.html). 
+## ISLR Default Dataset
 
-The __Default__ dataset contains credit card debt information for 10,000 consumers. I've made few minor updates to the dataset: 
-* The binary categorical columns __student__ and __default__ contain values __Yes__ and __No__. I've modified updated the dataset slightly to map these values to __1__ and __0__ respectively.
+The authors of [Introduction to Statistical Learning 2e](https://www.statlearning.com/) have provided multiple datasets for practical labs and exercises. You can find the R package containing all of these datasets [here](https://cran.r-project.org/web/packages/ISLR2/index.html). 
+
+The __Default__ dataset contains credit card debt information for 10,000 consumers. I've made a few minor updates to the dataset: 
+* The binary categorical columns __student__ and __default__ contain values __Yes__ and __No__. I've mapped these values to __1__ and __0__, respectively.
 * Removed the first column with the range index
 
-Why did I do these changes? 
+Why did I make these changes? 
 
-I plan to use this dataset in a few blog posts at [Proclus Academy](https://proclusacademy.com). The blog covers basic Machine Learning concepts. And I don't want to include preprocessing steps in the blog as it takes away the focus from the main topic. Hence I'm getting the dataset in a shape I can use directly in the blog.
+I plan to use this dataset in a few blog posts at [Proclus Academy](https://proclusacademy.com). The blog covers basic Machine Learning concepts. I don't want to include preprocessing steps in some articles as it shifts the focus away from the main topic. Hence I'm preparing the modified dataset I can use directly in the blog.
 
 
 ```python
