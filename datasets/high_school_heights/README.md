@@ -15,11 +15,11 @@ There are 500 measurements for each gender.
 
 Here are the datasets:
 
-* __hs_heights_combined.csv__: contains a single column with heights of all boys and girls. There's no way to tell which of the values are for boys and which ones are for girls.   
+* __hs_heights.csv__: contains a single column with heights for all boys and girls. There's no way to tell which of the values are for boys and which ones are for girls.   
 
-* __hs_heights.csv__: contains two columns. The first column has boy's heights. The second column contains girl's heights.
+* __hs_heights_pair.csv__: has two columns. The first column has boy's heights. The second column contains girl's heights.
 
-* __hs_heights_flag.csv__: contains two columns. The first column has the flag __is_girl__. The second column contains a girl's height if the flag is __1__. Otherwise it contains boy's height.     
+* __hs_heights_flag.csv__: has two columns. The first column has the flag __is_girl__. The second column contains a girl's height if the flag is __1__. Otherwise, it contains a boy's height.     
 
 
 
@@ -49,7 +49,7 @@ boys = boys.round(2)
 girls = girls.round(2)
 ```
 
-### Dataset: `hs_heights_combined.csv`
+### Dataset: `hs_heights.csv`
 
 
 ```python
@@ -57,12 +57,12 @@ heights_combined = np.concatenate([boys, girls])
 
 np.random.shuffle(heights_combined)
 
-pd.DataFrame(heights_combined).to_csv("hs_heights_combined.csv", index=False)
+pd.DataFrame(heights_combined).to_csv("hs_heights.csv", index=False)
 ```
 
 
 ```python
-pd.read_csv('hs_heights_combined.csv')
+pd.read_csv('hs_heights.csv')
 ```
 
 
@@ -141,7 +141,7 @@ pd.read_csv('hs_heights_combined.csv')
 
 
 
-### Dataset: `hs_heights.csv`
+### Dataset: `hs_heights_pair.csv`
 
 
 ```python
@@ -150,12 +150,89 @@ df = pd.DataFrame({
     'girls':girls
 })
 
-df.to_csv("hs_heights.csv", index=False)
+df.to_csv("hs_heights_pair.csv", index=False)
 ```
 
 
 ```python
-pd.read_csv('hs_heights.csv')
+df.describe().round(2)
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>boys</th>
+      <th>girls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>500.00</td>
+      <td>500.00</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>67.16</td>
+      <td>61.98</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2.89</td>
+      <td>2.12</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>59.16</td>
+      <td>56.68</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>65.18</td>
+      <td>60.60</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>67.13</td>
+      <td>62.00</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>68.95</td>
+      <td>63.38</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>77.15</td>
+      <td>69.35</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+pd.read_csv('hs_heights_pair.csv')
 ```
 
 
@@ -242,83 +319,6 @@ pd.read_csv('hs_heights.csv')
   </tbody>
 </table>
 <p>500 rows × 2 columns</p>
-</div>
-
-
-
-
-```python
-df.describe().round(2)
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>boys</th>
-      <th>girls</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>500.00</td>
-      <td>500.00</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>67.16</td>
-      <td>61.98</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>2.89</td>
-      <td>2.12</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>59.16</td>
-      <td>56.68</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>65.18</td>
-      <td>60.60</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>67.13</td>
-      <td>62.00</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>68.95</td>
-      <td>63.38</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>77.15</td>
-      <td>69.35</td>
-    </tr>
-  </tbody>
-</table>
 </div>
 
 
